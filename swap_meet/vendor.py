@@ -19,7 +19,6 @@ class Vendor:
                 return item             
         return None
 
-
     def swap_items(self, other_vendor, my_item, their_item):
         if my_item not in self.inventory or their_item not in other_vendor.inventory:
             return False
@@ -65,4 +64,9 @@ class Vendor:
         return self.swap_items(other_vendor, their_wanted_item, my_wanted_item)
 
     
-
+    # def swap_by_newest(self, other_vendor):
+    #     if not self.inventory or not other_vendor.inventory:
+    #         return False
+    #     my_newest = min(self.age) 
+    #     other_newest = min(other_vendor.age)
+    #     return self.swap_items(self, other_vendor, my_newest, other_newest)
