@@ -6,7 +6,8 @@ class Decor(Item):
         self.length = length
 
     def __str__(self):
-        return f"An object of type Decor with id {self.id}. It takes up a {self.width} by {self.length} sized space."
+        decor_msg = f" It takes up a {self.width} by {self.length} sized space."
+        return super().__str__() + decor_msg
 
 
 #     - For example, if we had a `Decor` instance with an `id` of `123435`, `width` of `3`, and `length` of `7`, its stringify method should return `"An object of type Decor with id 12345. It takes up a 3 by 7 sized space."`
