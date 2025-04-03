@@ -184,8 +184,8 @@ In Wave 6 we will write three methods, `get_by_category`, `get_best_by_category`
   - This method returns a list of objects in the inventory with that category
   - If there are no items in the `inventory` that match the category argument, the method returns an empty list
 
-- `Vendor`s have a method named `get_best_by_category`, which will get the item with the best condition in a certain category
-  - It takes one argument: a string that represents a category
+- `Vendor`s have a method named `get_best_by_category`, which will get the certain category
+  - It takes oitem with the best condition in a ne argument: a string that represents a category
   - This method looks through the instance's `inventory` for the item with the highest `condition` and matching `category`
     - It returns this item
     - If there are no items in the `inventory` that match the category, it returns `None`
