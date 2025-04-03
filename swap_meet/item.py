@@ -5,10 +5,10 @@
 
 from uuid import uuid4
 class Item:
-    def __init__(self, id = None, condition = 0, age = None):
-        self.age = age
+    def __init__(self, id = None, condition = 0, age = 0):
         self.id = id if id is not None else uuid4().int
         self.condition = condition
+        self.age = age
 
     
     def get_category(self):

@@ -22,10 +22,12 @@ class Vendor:
     def swap_items(self, other_vendor, my_item, their_item):
         if my_item not in self.inventory or their_item not in other_vendor.inventory:
             return False
+        
         self.inventory.remove(my_item)
-        other_vendor.inventory.append(my_item)
-        self.inventory.append(their_item)
         other_vendor.inventory.remove(their_item)
+
+        self.inventory.append(their_item)
+        other_vendor.inventory.append(my_item)
         return True
     
     def swap_first_item(self, other_vendor):
@@ -64,9 +66,17 @@ class Vendor:
         return self.swap_items(other_vendor, their_wanted_item, my_wanted_item)
 
     
-    # def swap_by_newest(self, other_vendor):
-    #     if not self.inventory or not other_vendor.inventory:
-    #         return False
-    #     my_newest = min(self.age) 
-    #     other_newest = min(other_vendor.age)
-    #     return self.swap_items(self, other_vendor, my_newest, other_newest)
+    def swap_by_newest(self, other_vendor):
+        if not self.inventory or not other_vendor.inventory:
+            return False
+        
+        my_newest = self.newest_item()
+        other_newest = other_vendor.newest_item()
+        return self.swap_items(other_vendor, my_newest, other_newest)
+
+    def newest_item(self):
+        newest = self.inventory[0]
+        for item in self.inventory:
+            if item.age < newest.age:
+                newest = item
+        return newest
