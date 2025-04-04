@@ -1,4 +1,4 @@
-import uuid
+from uuid import uuid4 
 
 class Item:
     def __init__(self, id = None, condition = 0, age = 0):
