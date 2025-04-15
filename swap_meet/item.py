@@ -28,13 +28,13 @@ class Item:
     #     return descriptions.get(self.condition)
         if self.condition <= 1:
             return "You probably want a glove for this one..."
-        elif 1 < self.condition <= 2:
+        elif self.condition <= 2:
             return "Heavily used"
-        elif 2 < self.condition <= 3:
+        elif self.condition <= 3:
             return "Worn but usable"
-        elif 3 < self.condition <= 4:
+        elif self.condition <= 4:
             return "Gently used"
-        elif 4 < self.condition <= 5:
+        elif self.condition <= 5:
             return "Like new"
         else:
             return "Mint condition"

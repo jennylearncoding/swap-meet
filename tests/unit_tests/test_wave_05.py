@@ -108,6 +108,10 @@ def test_items_have_condition_as_float():
     for item in items:
         assert item.condition == pytest.approx(3.5)
 
+def test_items_condition_as_float():
+    item = Decor(condition=3.5)
+    result = item.condition_description()
+    assert result == "Gently used"
 
 # @pytest.mark.skip
 def test_items_have_condition_descriptions_that_are_the_same_regardless_of_type():
